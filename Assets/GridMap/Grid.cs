@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grid : MonoBehaviour
-{
+public class Grid : MonoBehaviour {
     private int width;
     private int height;
+    private float gridCellSize;
+    public GameObject cell;
 
     // 2-D array 
     private int[,] gridArray;
     
     // constructor
-    public Grid(int width, int height) {
+    public Grid(int width, int height, float gridCellSize) {
         this.width = width;
         this.height = height;
 
@@ -21,9 +22,22 @@ public class Grid : MonoBehaviour
 
         for (int x = 0; x < width; x++){
             for (int y = 0; y < height; y++){
-                Debug.Log(x + ", " + y);
+                // Debug.Log(x + ", " + y);
+
+                Spawn(x, y);
             }
         }
+    }
+
+    private Vector3 GetCell(int x, int y) 
+    {
+        return new Vector3(x, y) * gridCellSize;
+    }
+
+    void Spawn(int x, int y)
+    {
+        Vector3 position = new Vector3(x, y, 0);
+        //Instantiate(cell, position, Quaternion.identity);
     }
     
     // Start is called before the first frame update
