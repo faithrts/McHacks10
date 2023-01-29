@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class ToggleFengShuiInfo : MonoBehaviour
 {
-    public Button pencilButton;
     public Button FengShuiButton;
+    public Button self;
+
     private bool clicked = false;
 
     // Start is called before the first frame update
@@ -24,9 +25,11 @@ public class ToggleFengShuiInfo : MonoBehaviour
     public void ButtonClicked() {
         if (clicked) {
             FengShuiButton.gameObject.SetActive(false);
+            self.GetComponent<Image>().color = new Color(255, 255, 71);
         }
         else {
             FengShuiButton.gameObject.SetActive(true);
+            self.GetComponent<Image>().color = new Color(255, 255, 255);
         }
         clicked = !clicked;
     }
