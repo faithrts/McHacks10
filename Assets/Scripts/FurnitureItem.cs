@@ -12,12 +12,10 @@ public class FurnitureItem : MonoBehaviour
     {   
         var spawnedItem = Instantiate(furnitureItem, new Vector3(0, 0), Quaternion.identity);
         spawnedItem.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+        Debug.Log(spawnedItem.ToString());
+
+        // FurnitureManager.furnitureItems[] = spawnedItem;
         
     }
 }

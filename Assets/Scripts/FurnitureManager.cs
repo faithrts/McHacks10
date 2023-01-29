@@ -6,13 +6,24 @@ public class FurnitureManager : MonoBehaviour
 {
 
     [SerializeField] private FurnitureItem furnitureItem;
-    public static Dictionary<string, FurnitureItem> furnitureItems;
+    public static Dictionary<string, List<FurnitureItem>> furnitureItems;
 
     // Start is called before the first frame update
     void Start()
     {   
-        furnitureItems = new Dictionary<string, FurnitureItem>();
-        
+        // list of beds
+        List<FurnitureItem> bedList = new List<FurnitureItem>(); 
+
+        // list of seatings
+        List<FurnitureItem> seatingList = new List<FurnitureItem>(); 
+
+        // list of tables
+        List<FurnitureItem> tableList = new List<FurnitureItem>(); 
+
+        furnitureItems = new Dictionary<string, List<FurnitureItem>>();
+        furnitureItems["beds"] = bedList;
+        furnitureItems["seatings"] = seatingList;
+        furnitureItems["tables"] = tableList;
     }
 
     // Update is called once per frame

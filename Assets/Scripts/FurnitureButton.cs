@@ -8,7 +8,7 @@ public class FurnitureButton : MonoBehaviour
     [SerializeField] private Button thisButton;
 
     void Update() {
-        if (ChangeButton.editMode) {
+        if (true) {
             thisButton.interactable = false;
         }
         else {

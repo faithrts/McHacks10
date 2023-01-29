@@ -27,7 +27,7 @@ public class Cell : MonoBehaviour
     }
 
     void OnMouseEnter() {
-        if(ChangeButton.editMode) {
+        if(true) {
             highlight.SetActive(true);
         }
     }
@@ -37,7 +37,7 @@ public class Cell : MonoBehaviour
     }
 
     void OnMouseDown() {
-        if(ChangeButton.editMode) {
+        if(true) {
             // if this cell was already selected, de-selects it
             if (isClicked) {
                 if (isOffset) {
