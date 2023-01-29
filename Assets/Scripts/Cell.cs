@@ -53,4 +53,8 @@ public class Cell : MonoBehaviour
         isClicked = !isClicked;
         }
     }
+
+    public bool GetStatus(){
+        return isClicked;
+    }
 }
