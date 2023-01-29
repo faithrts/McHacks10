@@ -17,9 +17,11 @@ public class ChangeButton : MonoBehaviour
     }
 
     public void ChangeButtonImage() {
+        // changing from furniture-adding mode to room-drawing mode
         if(button.image.sprite == pencilButton) {
             button.image.sprite = couchButton;
         }
+        // changing from room-drawing mode to furniture-adding mode
         else {
             button.image.sprite = pencilButton;
         }

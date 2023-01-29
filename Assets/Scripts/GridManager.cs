@@ -9,9 +9,11 @@ public class GridManager : MonoBehaviour
     [SerializeField] private Transform camera;
  
     private Dictionary<Vector2, Cell> cells;
+    public static Dictionary<Vector2, Cell> chosenCells;
 
     void Start() {
         GenerateGrid();
+        chosenCells = new Dictionary<Vector2, Cell>();
     }
 
     void GenerateGrid() {
@@ -31,7 +33,7 @@ public class GridManager : MonoBehaviour
 
                 // is x even and y is not event or vice versa
                 var isOffset = (x % 2 == 0 && y % 2 != 0) || (x % 2 != 0 && y % 2 == 0);
-                spawnedCell.Init(isOffset);
+                spawnedCell.Init(isOffset, new Vector2(x, y));
 
                 cells[new Vector2(x, y)] = spawnedCell;
             }
