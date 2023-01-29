@@ -5,4 +5,4 @@ We've all been there: moving into a new apartment, taking stock of existing furn
 
 The idea of our solution is to facilitate room organization based on Feng Shui principles :)
 
-<img width="711" alt="original" src="https://user-images.githubusercontent.com/68522912/215342225-85437a8c-953e-48b1-8b1d-27d50ded0634.png">
+<img width="710" alt="Screen Shot 2023-01-29 at 12 00 12 PM" src="https://user-images.githubusercontent.com/68522912/215342926-044dbcfb-7da6-4cc8-8eba-f746fd257a21.png">
