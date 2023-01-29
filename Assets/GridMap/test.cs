@@ -7,7 +7,7 @@ public class test : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        Grid grid = new Grid(4, 2);
+        //Grid grid = new Grid(4, 2, 10f);
     }
 
     // Update is called once per frame
