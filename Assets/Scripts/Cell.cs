@@ -49,6 +49,9 @@ public class Cell : MonoBehaviour
 
                 // removes current cell from the clicked dictionary
                 GridManager.chosenCells.Remove(coords);
+                int LayerDefault = LayerMask.NameToLayer("Default");
+                //Cell cell = GridManager.getCellAtPosition(coords);
+                renderer.gameObject.layer = LayerDefault;
             } 
             // if this hasn't already been selected
             else {
@@ -56,6 +59,9 @@ public class Cell : MonoBehaviour
 
                 // adds current cell from the clicked dictionary
                 GridManager.chosenCells.Add(coords, this);
+                int LayerIgnoreColl = LayerMask.NameToLayer("Ignore Collisions");
+                //Cell cell = GridManager.getCellAtPosition(coords);
+                renderer.gameObject.layer = LayerIgnoreColl;
             }
 
         // switch
