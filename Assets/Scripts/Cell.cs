@@ -24,7 +24,9 @@ public class Cell : MonoBehaviour
     }
 
     void OnMouseEnter() {
-        highlight.SetActive(true);
+        if(ChangeButton.editMode) {
+            highlight.SetActive(true);
+        }
     }
 
     void OnMouseExit() {
@@ -32,15 +34,16 @@ public class Cell : MonoBehaviour
     }
 
     void OnMouseDown() {
-        // if this cell was already clicked
-        if (isClicked) {
-            if (isOffset) {
-            renderer.color = offColor;
+        if(ChangeButton.editMode) {
+            // if this cell was already clicked
+            if (isClicked) {
+                if (isOffset) {
+                renderer.color = offColor;
             }
             else {
                 renderer.color = baseColor;
             }
-        }
+        } 
         // if this cell is its default colour
         else {
             renderer.color = selectColor;
@@ -48,5 +51,6 @@ public class Cell : MonoBehaviour
 
         // switch
         isClicked = !isClicked;
+        }
     }
 }
