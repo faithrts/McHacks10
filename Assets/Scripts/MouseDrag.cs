@@ -8,6 +8,9 @@ public class MouseDrag : MonoBehaviour
     private bool dragging = false;
     private Vector3 offset;
 
+    public delegate void DragEndedDelegate(MouseDrag dragObject);
+    public DragEndedDelegate dragEndedCallback;
+
     void Update() {
         if (dragging) {
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
@@ -21,5 +24,6 @@ public class MouseDrag : MonoBehaviour
     
     private void OnMouseUp() {
         dragging = false;
+        dragEndedCallback(this);
     }
 }

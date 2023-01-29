@@ -8,7 +8,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private Cell cellPrefab;
     [SerializeField] private Transform camera;
  
-    private Dictionary<Vector2, Cell> cells;
+    static private Dictionary<Vector2, Cell> cells;
     public static Dictionary<Vector2, Cell> chosenCells;
 
     void Start() {
@@ -42,11 +42,16 @@ public class GridManager : MonoBehaviour
         //camera.transform.position = new Vector3((float)width/2 - 0.5f, (float)height/2 - 0.5f, -10);
     }
 
-    public Cell getCellAtPosition(Vector2 position) {
+    static public Cell getCellAtPosition(Vector2 position) {
         if(cells.TryGetValue(position, out var cell)) {
             return cell;
         }
 
         return null;
+    }
+
+    static public GameObject[] findCells() {
+        GameObject[] cells = GameObject.FindGameObjectsWithTag("Cell");
+        return cells;
     }
 }
