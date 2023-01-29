@@ -20,7 +20,11 @@ public class GridManager : MonoBehaviour
 
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                var spawnedCell = Instantiate(cellPrefab, new Vector3(x, y), Quaternion.identity);
+
+                float new_x = (float) (x - 8.55);
+                float new_y = (float) (y - 3.96);
+
+                var spawnedCell = Instantiate(cellPrefab, new Vector3(new_x, new_y), Quaternion.identity);
                 spawnedCell.name = $"Cell {x} {y}";
 
                 //spawnedCell.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
@@ -33,7 +37,7 @@ public class GridManager : MonoBehaviour
             }
         }
 
-        camera.transform.position = new Vector3((float)width/2 - 0.5f, (float)height/2 - 0.5f, -10);
+        //camera.transform.position = new Vector3((float)width/2 - 0.5f, (float)height/2 - 0.5f, -10);
     }
 
     public Cell getCellAtPosition(Vector2 position) {
