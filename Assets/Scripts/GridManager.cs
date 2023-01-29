@@ -23,6 +23,8 @@ public class GridManager : MonoBehaviour
                 var spawnedCell = Instantiate(cellPrefab, new Vector3(x, y), Quaternion.identity);
                 spawnedCell.name = $"Cell {x} {y}";
 
+                //spawnedCell.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+
                 // is x even and y is not event or vice versa
                 var isOffset = (x % 2 == 0 && y % 2 != 0) || (x % 2 != 0 && y % 2 == 0);
                 spawnedCell.Init(isOffset);

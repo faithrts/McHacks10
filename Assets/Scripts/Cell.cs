@@ -9,7 +9,7 @@ public class Cell : MonoBehaviour
     [SerializeField] private Color selectColor;
     [SerializeField] private SpriteRenderer renderer;
     [SerializeField] private GameObject highlight;
-    private bool wasClicked = false;
+    private bool isClicked = false;
     private bool isOffset;
 
     public void Init(bool isOffset) {
@@ -33,7 +33,7 @@ public class Cell : MonoBehaviour
 
     void OnMouseDown() {
         // if this cell was already clicked
-        if (wasClicked) {
+        if (isClicked) {
             if (isOffset) {
             renderer.color = offColor;
             }
@@ -47,27 +47,6 @@ public class Cell : MonoBehaviour
         }
 
         // switch
-        wasClicked = !wasClicked;
-    }
-
-    void OnMouseDrag() {
-        /*
-        // if this cell was already clicked
-        if (wasClicked) {
-            if (isOffset) {
-            renderer.color = offColor;
-            }
-            else {
-                renderer.color = baseColor;
-            }
-        }
-        // if this cell is its default colour
-        else {
-            renderer.color = selectColor;
-        }
-
-        // switch
-        wasClicked = !wasClicked;
-        */
+        isClicked = !isClicked;
     }
 }
