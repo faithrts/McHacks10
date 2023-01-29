@@ -21,8 +21,8 @@ public class GridManager : MonoBehaviour
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
 
-                float new_x = (float) (x - 8.55);
-                float new_y = (float) (y - 3.96);
+                float new_x = (float) (x - 8.23) * 0.75f;
+                float new_y = (float) (y - 3.63) * 0.75f;
 
                 var spawnedCell = Instantiate(cellPrefab, new Vector3(new_x, new_y), Quaternion.identity);
                 spawnedCell.name = $"Cell {x} {y}";
